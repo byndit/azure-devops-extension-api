@@ -10,16 +10,16 @@ const copy = require("recursive-copy");
 const shell = require("shelljs");
 const UglifyES = require("uglify-es");
 
-(async function() {
+(async function () {
 
     // Clean bin directory
     console.log("# Cleaning bin. Running shelljs rm -rf ./bin");
     shell.rm("-rf", "./bin");
 
     // Compile typescript
-    console.log("# Compiling TypeScript. Executing `node_modules\\.bin\\tsc -p ./tsconfig.json`.");
+    console.log("# Compiling TypeScript. Executing `npx tsc -p ./tsconfig.json`.");
     try {
-        execSync("node_modules\\.bin\\tsc -p ./tsconfig.json", {
+        execSync("npx tsc -p ./tsconfig.json", {
             stdio: [0, 1, 2],
             shell: true,
             cwd: __dirname,

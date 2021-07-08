@@ -1,5 +1,5 @@
 {
-  "name": "azure-devops-extension-api",
+  "name": "@byndit/azure-devops-extension-api",
   "version": "1.158.0",
   "description": "REST client libraries and contracts for Azure DevOps web extension developers.",
   "repository": {
@@ -16,6 +16,8 @@
   ],
   "author": "Microsoft",
   "license": "MIT",
+  "main": "./bin/index.js",
+  "typings": "./bin/index.d.ts",
   "bugs": {
     "url": "https://github.com/Microsoft/azure-devops-extension-api/issues"
   },
@@ -24,6 +26,9 @@
     "azure-devops-extension-sdk": "~2.0.11",
     "whatwg-fetch": "~3.0.0"
   },
+  "files": [
+    "bin"
+  ],
   "devDependencies": {
     "glob": "~7.1.2",
     "node": "^11.0.0",
