@@ -4,3 +4,4 @@ bin/
 apis-config/
 *.tgz
 .DS_Store
+*.zip

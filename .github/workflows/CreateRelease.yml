@@ -25,9 +25,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }} 
-          asset_path: ./package.tgz
-          asset_name: package.tgz
-          asset_content_type: application/tar+gzip
-      - run: npm publish package.tgz --ignore-scripts --access public
+          asset_path: ./package.zip
+          asset_name: package.zip
+          asset_content_type: application/zip
+      - run: npm publish bin --ignore-scripts --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}

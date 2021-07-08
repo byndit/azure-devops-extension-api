@@ -1,6 +1,6 @@
 {
   "name": "@byndit/azure-devops-extension-api",
-  "version": "1.163.2",
+  "version": "1.163.3",
   "description": "REST client libraries and contracts for Azure DevOps web extension developers.",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node buildpackage.js",
-    "pack": "(mv \"$(npm pack | tail -n 1)\" package.tgz)"
+    "pack": "zip -r package.zip bin"
   },
   "keywords": [
     "extensions",
