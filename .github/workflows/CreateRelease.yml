@@ -28,6 +28,6 @@ jobs:
           asset_path: ./package.tgz
           asset_name: package.tgz
           asset_content_type: application/tar+gzip
-      - run: npm publish --ignore-scripts --access public
+      - run: npm publish package.tgz --ignore-scripts --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
