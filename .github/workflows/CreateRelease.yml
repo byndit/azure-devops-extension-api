@@ -1,0 +1,33 @@
+on:
+  release:
+    types: [created]
+    
+name: Create Release
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci --ignore-scripts
+      - run: npm run build --if-present
+      - run: npm run pack
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }} 
+          asset_path: ./package.tgz
+          asset_name: package.tgz
+          asset_content_type: application/tar+gzip
+      - run: npm publish --ignore-scripts --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
