@@ -1276,7 +1276,7 @@ export class WorkRestClient extends RestClientBase {
         const team = teamContext.teamId || teamContext.team;
 
         return this.beginRequest<Work.TeamFieldValues>({
-            apiVersion: "5.2-preview.1",
+            apiVersion: "5.1",
             routeTemplate: "{project}/{team}/_apis/work/teamsettings/teamfieldvalues",
             routeValues: {
                 project: project,
